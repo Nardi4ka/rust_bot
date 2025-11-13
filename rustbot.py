@@ -2,6 +2,20 @@ import disnake
 from disnake.ext import commands, tasks
 import a2s
 import os
+from flask import Flask
+from threading import Thread
+
+app = Flask(__name__)
+
+@app.route('/')
+def wake_up():
+    return "🤖 Bot is alive!", 200
+
+def run_web():
+    app.run(host='0.0.0.0', port=10000)
+
+# Запустить в отдельном потоке
+Thread(target=run_web).start()
 
 # === КОНФИГУРАЦИЯ ===
 BOT_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
@@ -84,6 +98,7 @@ if __name__ == "__main__":
     print("🚀 Запуск бота с портом 35210...")
 
     bot.run(BOT_TOKEN)
+
 
 
 
