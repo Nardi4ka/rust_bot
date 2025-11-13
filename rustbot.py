@@ -83,7 +83,8 @@ async def connect(ctx):
 if __name__ == "__main__":
     print("🚀 Запуск бота с портом 35210...")
 
-    bot.run(DISCORD_BOT_TOKEN)
+    bot.run(BOT_TOKEN)
+
 
 
 
