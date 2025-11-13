@@ -1,6 +1,7 @@
 import disnake
 from disnake.ext import commands, tasks
 import a2s
+import os
 
 # === КОНФИГУРАЦИЯ ===
 BOT_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
@@ -83,5 +84,6 @@ if __name__ == "__main__":
     print("🚀 Запуск бота с портом 35210...")
 
     bot.run(DISCORD_BOT_TOKEN)
+
 
 
